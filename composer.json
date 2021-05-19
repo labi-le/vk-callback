@@ -1,0 +1,17 @@
+{
+    "name": "labile/vk-callback",
+    "authors": [
+        {
+            "name": "labile",
+            "email": "1a6i1e@gmail.com"
+        }
+    ],
+    "require": {},
+    "description": "",
+
+    "autoload": {
+        "psr-4": {
+            "Astaroth\\CallBack\\" : "src"
+        }
+    }
+}

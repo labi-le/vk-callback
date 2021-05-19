@@ -4,13 +4,11 @@
 [![Packagist Stars](https://img.shields.io/packagist/stars/labile/vk-callback)](https://packagist.org/packages/labile/vk-callback/stats)
 [![Packagist Stats](https://img.shields.io/packagist/dt/labile/vk-callback)](https://packagist.org/packages/labile/vk-callback/stats)
 
-[Документация на русском языке](https://github.com/labi-le/vk-callback/blob/main/README_RU.md)
-
-## Installation
+## Установка
 
 `composer require labile/vk-callback`
 
-### Implementation of CallBack VK in php
+### Реализация CallBack VK на php
 
 ```php
 <?php
