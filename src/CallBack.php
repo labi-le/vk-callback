@@ -33,7 +33,7 @@ class CallBack
     {
         if ($input === 'php://input') {
             $raw_data = file_get_contents($input);
-            $this->data = json_decode($raw_data, true);
+            $this->data = json_decode($raw_data, false);
 
         }
 
