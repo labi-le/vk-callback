@@ -12,7 +12,7 @@ use Astaroth\CallBack\Exceptions\SecurityErrorException;
 class CallBack
 {
 
-    private array $data;
+    private object $data;
 
     public function __construct(public string $confirmation, public ?string $secret = null, public bool $handleRepeatedRequests = true, $input = 'php://input')
     {
@@ -100,9 +100,9 @@ class CallBack
     }
 
     /**
-     * @return array
+     * @return object
      */
-    public function getData(): array
+    public function getData(): object
     {
         return $this->data;
     }
