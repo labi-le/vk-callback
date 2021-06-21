@@ -86,12 +86,12 @@ class CallBack
      */
     private function handleConfirmation(): void
     {
-        if (isset($this->data['type']) && $this->data['type'] === 'confirmation') {
+        if (isset($this->data->type) && $this->data->type === 'confirmation') {
             die($this->confirmation);
         }
 
         if ($this->secret !== null) {
-            $secret = $this->data['secret'] ?? 'nothing';
+            $secret = $this->data->secret ?? 'nothing';
             if ($secret !== $this->secret) {
                 throw new SecurityErrorException(
                     sprintf("Wrong secret key\nThe key that should be: %s\nKey that came from VK: %s", $this->secret, $secret));
