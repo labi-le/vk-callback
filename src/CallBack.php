@@ -102,8 +102,13 @@ class CallBack
     /**
      * @return object
      */
-    public function getData(): object
+    private function getData(): object
     {
         return $this->data;
+    }
+
+    public function listen(callable $func): void
+    {
+        $func($this->getData());
     }
 }
