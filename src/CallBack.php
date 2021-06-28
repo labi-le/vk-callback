@@ -19,12 +19,6 @@ class CallBack
         $this->getInput($input)->handleConfirmation();
     }
 
-
-    public function __destruct()
-    {
-        $this->handleHeader();
-    }
-
     /**
      * @param string|array $input
      * @return CallBack
@@ -109,6 +103,7 @@ class CallBack
 
     public function listen(callable $func): void
     {
+        $this->handleHeader();
         $func($this->getData());
     }
 }
