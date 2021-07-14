@@ -13,6 +13,10 @@ class CallBack
 {
 
     private object $data;
+    /**
+     * @var false
+     */
+    private bool $clearHeaders = true;
 
     public function __construct(public string $confirmation, public ?string $secret = null, public bool $handleRepeatedRequests = true, $input = 'php://input')
     {
@@ -26,8 +30,8 @@ class CallBack
     private function getInput(string|array $input): static
     {
         if ($input === 'php://input') {
-            $raw_data = file_get_contents($input);
-            $this->data = json_decode($raw_data, false);
+            $raw_data = @file_get_contents($input);
+            $this->data = @json_decode($raw_data, false);
 
         }
 
@@ -45,10 +49,33 @@ class CallBack
 
     private function handleHeader(): void
     {
-        $this->handleRepeatedRequests() ?: $this->sendOK();
+        if ($this->handleRepeatedRequests() === false) {
+            $this->getClearHeaders() ? $this->clearHeadersAndSendOk() : $this->echoOk();
+        }
     }
 
-    private function sendOK(): void
+    private function echoOk(): void
+    {
+        echo 'ok';
+    }
+
+    /**
+     * @return false
+     */
+    public function getClearHeaders(): bool
+    {
+        return $this->clearHeaders;
+    }
+
+    /**
+     * For debug
+     */
+    public function disableClearHeaders(): void
+    {
+        $this->clearHeaders = false;
+    }
+
+    private function clearHeadersAndSendOk(): void
     {
         set_time_limit(0);
         ini_set('display_errors', 'Off');
@@ -58,7 +85,7 @@ class CallBack
 
         //for nginx
         if (is_callable('fastcgi_finish_request')) {
-            echo 'ok';
+            $this->echoOk();
             session_write_close();
             fastcgi_finish_request();
         }
@@ -70,7 +97,7 @@ class CallBack
         header('Content-Encoding: none');
         header('Content-Length: 2');
         header('Connection: close');
-        echo 'ok';
+        $this->echoOk();
         ob_end_flush();
         flush();
     }
