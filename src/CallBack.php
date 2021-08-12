@@ -31,8 +31,11 @@ class CallBack
     {
         if ($input === 'php://input') {
             $raw_data = @file_get_contents($input);
-            $this->data = @json_decode($raw_data, false);
 
+            $object = @json_decode($raw_data, false);
+            $object ?: die($this->echoOk());
+
+            $this->data = $object;
         }
 
         return $this;
