@@ -6,7 +6,10 @@
             "email": "1a6i1e@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=8.0",
+        "labile/astaroth-contracts": "^1.0"
+    },
     "description": "",
 
     "autoload": {

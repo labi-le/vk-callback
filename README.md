@@ -17,13 +17,11 @@
 
 declare(strict_types=1);
 
-use Astaroth\CallBack\CallBack;
+use Astaroth\CallBack\Callback;
 
-
-$callback = new CallBack('5f6441e6', 'gyucjrdsyxtkkGRHNTyzauski', false);
-$data = $callback->getData();
-if ($data['type'] === 'message_new'){
-    //...
-}
+$callback = new Callback('5f6441e6', 'gyucjrdsyxtkkGRHNTyzauski');
+$callback->listen(function ($data) {
+    //any action, absolutely...
+});
 ```
 
