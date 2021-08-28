@@ -62,7 +62,7 @@ final class Callback implements HandlerInterface
             default => throw new WrongInputErrorException("$input - input is missing")
         };
 
-        if ($inputObject->getData() === false) {
+        if ($inputObject->getData() === null) {
             self::echoAndDie();
         }
 

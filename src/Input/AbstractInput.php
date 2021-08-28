@@ -11,7 +11,7 @@ abstract class AbstractInput
 
     /**
      * Get data from input
-     * @return array|object|false
+     * @return ?object
      */
-    abstract public function getData();
+    abstract public function getData(): ?object;
 }

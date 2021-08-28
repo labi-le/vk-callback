@@ -7,9 +7,9 @@ namespace Astaroth\CallBack\Input;
 class DebugInput extends AbstractInput
 {
     public const INPUT = "debug";
-    private array $data;
+    private object $data;
 
-    public function getData()
+    public function getData(): ?object
     {
         return $this->data;
     }
