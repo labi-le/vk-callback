@@ -12,6 +12,6 @@ final class NativeInput extends AbstractInput
     public function getData(): ?object
     {
         $raw = file_get_contents(self::INPUT);
-        return @json_decode($raw, false);
+        return @json_decode($raw, false) ?: null;
     }
 }
