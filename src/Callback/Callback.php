@@ -174,8 +174,3 @@ final class Callback implements HandlerInterface
         $func($this->getData());
     }
 }
-
-$callback = new Callback("");
-$callback->listen(function ($data) {
-    //...
-});
