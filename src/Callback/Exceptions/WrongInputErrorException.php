@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Astaroth\CallBack\Exceptions;
+namespace Astaroth\Callback\Exceptions;
 
 use Exception;
 

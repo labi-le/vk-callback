@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Astaroth\CallBack\Input;
+namespace Astaroth\Callback\Input;
 
 class DebugInput extends AbstractInput
 {

@@ -3,15 +3,15 @@
 declare(strict_types=1);
 
 
-namespace Astaroth\CallBack;
+namespace Astaroth\Callback;
 
 
-use Astaroth\CallBack\Exceptions\WrongInputErrorException;
-use Astaroth\CallBack\Input\DebugInput;
-use Astaroth\CallBack\Input\NativeInput;
+use Astaroth\Callback\Exceptions\WrongInputErrorException;
+use Astaroth\Callback\Input\DebugInput;
+use Astaroth\Callback\Input\NativeInput;
 use Astaroth\Contracts\HandlerInterface;
 use Exception;
-use Astaroth\CallBack\Exceptions\SecurityErrorException;
+use Astaroth\Callback\Exceptions\SecurityErrorException;
 
 final class Callback implements HandlerInterface
 {

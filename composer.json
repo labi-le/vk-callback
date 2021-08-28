@@ -14,7 +14,8 @@
 
     "autoload": {
         "psr-4": {
-            "Astaroth\\CallBack\\" : "src"
-        }
+            "Astaroth\\Callback\\" : "src/Callback"
+        },
+        "files": ["src/Callback/functions.php"]
     }
 }

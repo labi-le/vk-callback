@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Astaroth\CallBack\Input;
+namespace Astaroth\Callback\Input;
 
 
 final class NativeInput extends AbstractInput
